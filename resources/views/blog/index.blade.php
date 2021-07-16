@@ -11,12 +11,20 @@
         </div>
     </div>
 
+    @if (session()->has('message'))
+        <div class="w-4/5 m-auto mt-10 pl-2">
+            <p class="w-2/6 mb-4 text-green-50 bg-green-500 rounded-2xl py-4 text-center">
+                {{ session()->get('message') }}
+            </p>
+        </div>
+    @endif
+
     @if (Auth::check())
         <div class="pt-15 w-4/5 m-auto">
             <a
                 href="/blog/create"
                 class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold px-5 py-3 rounded-3xl">
-Create Post
+                Create Post
             </a>
         </div>
     @endif
