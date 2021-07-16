@@ -74,12 +74,13 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param string $slug
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(string $slug)
     {
-        //
+        return view('blog.edit')
+            ->with('post', Post::where('slug', $slug)->first());
     }
 
     /**
