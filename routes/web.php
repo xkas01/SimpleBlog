@@ -22,5 +22,5 @@ Route::resource('/blog', PostsController::class);
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [PostsController::class, 'index'])->name('home');
 
